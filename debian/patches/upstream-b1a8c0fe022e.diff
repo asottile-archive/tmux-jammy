@@ -1,11 +1,18 @@
+From: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Date: Fri, 27 May 2022 14:14:49 -0400
+Subject: upstream-b1a8c0fe022e
+
 commit b1a8c0fe022e99cffb0fb4f321740464f35bc6b9
 Author: Nicholas Marriott <nicholas.marriott@gmail.com>
 Date:   Tue Jun 22 12:16:48 2021 +0100
 
     Fix crosscompiling, Marco A L Barbosa.
+---
+ configure.ac | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/configure.ac b/configure.ac
-index f6bdd3c73f..30b4d37085 100644
+index 9bbfd49..ee4d063 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -160,6 +160,7 @@ AC_RUN_IFELSE([AC_LANG_PROGRAM(

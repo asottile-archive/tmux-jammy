@@ -1,13 +1,22 @@
+From: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Date: Fri, 27 May 2022 14:14:49 -0400
+Subject: upstream-32f2d9d089ce
+
 commit 32f2d9d089ced7d693aa412821f1d66134877cf0
 Author: Nicholas Marriott <nicholas.marriott@gmail.com>
 Date:   Tue Jul 6 08:26:00 2021 +0000
 
     Improve error reporting when the tmux /tmp directory cannot be created
     or used, GitHub issue 2765 from Uwe Kleine-Koenig.
+---
+ tmux.c | 15 ++++++++++-----
+ 1 file changed, 10 insertions(+), 5 deletions(-)
 
+diff --git a/tmux.c b/tmux.c
+index 2992178..1fdba72 100644
 --- a/tmux.c
 +++ b/tmux.c
-@@ -207,16 +207,22 @@
+@@ -207,16 +207,22 @@ make_label(const char *label, char **cause)
  	free(paths);
  
  	xasprintf(&base, "%s/tmux-%ld", path, (long)uid);
@@ -34,7 +43,7 @@ Date:   Tue Jul 6 08:26:00 2021 +0000
  		goto fail;
  	}
  	xasprintf(&path, "%s/%s", base, label);
-@@ -224,7 +230,6 @@
+@@ -224,7 +230,6 @@ make_label(const char *label, char **cause)
  	return (path);
  
  fail:

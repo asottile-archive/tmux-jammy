@@ -1,12 +1,18 @@
-Description: Platform-specific fixes
- * Define MAXPATHLEN, PATH_MAX, MAXHOSTNAMELEN, MAX_IOV for Hurd.
- * Add workaround for broken GNU/kFreeBSD system headers.
-Author: Karl Ferdinand Ebert <kfebert@gmail.com>
-Author: Romain Francoise <rfrancoise@debian.org>
-Author: James Clarke <jrtc27@debian.org>
+From: Karl Ferdinand Ebert <kfebert@gmail.com>
+Date: Fri, 27 May 2022 14:14:49 -0400
+Subject: Platform-specific fixes
+
 Bug-Debian: http://bugs.debian.org/609333
 Forwarded: not-needed
 
+* Define MAXPATHLEN, PATH_MAX, MAXHOSTNAMELEN, MAX_IOV for Hurd.
+* Add workaround for broken GNU/kFreeBSD system headers.
+---
+ compat.h | 30 ++++++++++++++++++++++++++++++
+ 1 file changed, 30 insertions(+)
+
+diff --git a/compat.h b/compat.h
+index 13334ad..6a1dd0b 100644
 --- a/compat.h
 +++ b/compat.h
 @@ -21,6 +21,20 @@
@@ -30,7 +36,7 @@ Forwarded: not-needed
  #include <fnmatch.h>
  #include <limits.h>
  #include <stdio.h>
-@@ -289,6 +303,22 @@
+@@ -289,6 +303,22 @@ void		 explicit_bzero(void *, size_t);
  int		 getdtablecount(void);
  #endif
  
