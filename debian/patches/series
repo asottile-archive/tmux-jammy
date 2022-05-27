@@ -1,3 +1,4 @@
 platform-quirks.diff
 upstream-32f2d9d089ce.diff
 upstream-b1a8c0fe022e.diff
+0004-Only-use-client-for-sizing-when-not-detached-GitHub-.patch

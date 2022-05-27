@@ -1,0 +1,22 @@
+From: nicm <nicm>
+Date: Tue, 13 Jul 2021 10:38:57 +0000
+Subject: Only use client for sizing when not detached, GitHub issue 2772.
+
+---
+ cmd-new-session.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/cmd-new-session.c b/cmd-new-session.c
+index c47d66c..33dc77c 100644
+--- a/cmd-new-session.c
++++ b/cmd-new-session.c
+@@ -269,7 +269,8 @@ cmd_new_session_exec(struct cmd *self, struct cmdq_item *item)
+ 	memset(&sc, 0, sizeof sc);
+ 	sc.item = item;
+ 	sc.s = s;
+-	sc.tc = c;
++	if (!detached)
++		sc.tc = c;
+ 
+ 	sc.name = args_get(args, 'n');
+ 	sc.argc = args->argc;
