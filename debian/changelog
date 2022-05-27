@@ -1,3 +1,9 @@
+tmux (3.2a-4build1+asottile1) jammy; urgency=medium
+
+  * import upstream patch df3fe2aa72da0555106c6187e750418f0e59d901
+
+ -- Anthony Sottile <asottile@umich.edu>  Fri, 27 May 2022 14:21:16 -0400
+
 tmux (3.2a-4build1) jammy; urgency=high
 
   * No change rebuild for ppc64el baseline bump.
